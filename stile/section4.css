@@ -1,5 +1,11 @@
 /* section4.css */
 #section4 {
     background: #363636; /* Grigio Medio */
-    color: #DAA520;
+    color: #DAA520; /* Oro */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }

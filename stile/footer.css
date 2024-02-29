@@ -1,5 +1,11 @@
 /* footer.css */
 #section5 {
-    background: #0A0A0A;
-    color: #DAA520;
+    background: #0A0A0A; /* Nero */
+    color: #DAA520; /* Oro */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }

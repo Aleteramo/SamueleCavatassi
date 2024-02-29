@@ -10,8 +10,23 @@
     text-align: center;
 }
 
-
 #section2 button {
-    background-color: #DAA520;
-    color: #FFFFFF;
+    font-family: 'Arial', sans-serif;
+    background-color: #DAA520; /* Oro */
+    color: #0A0A0A; /* Nero */
+    padding: 15px 30px; /* Dimensioni del padding possono essere regolate */
+    font-size: 1rem; /* Dimensione del font */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 5px; /* Aggiunge bordi arrotondati al bottone */
+    outline: none; /* Rimuove il bordo di focus predefinito per alcuni browser */
+    margin-top: 20px; /* Distanza dal testo sopra, se necessario */
 }
+
+#section2 button:hover {
+    background-color: #FFFFFF; /* Bianco */
+    color: #0A0A0A; /* Nero */
+    transform: scale(1.05); /* Effetto di ingrandimento leggero */
+}
+

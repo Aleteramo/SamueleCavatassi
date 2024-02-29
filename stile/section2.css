@@ -1,0 +1,10 @@
+/* section2.css */
+#section2 {
+    background: #1A1A1A; /* Grigio Scuro */
+    color: #DAA520; /* Oro */
+}
+
+#section2 button {
+    background-color: #DAA520;
+    color: #FFFFFF;
+}

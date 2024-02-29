@@ -2,4 +2,10 @@
 #section1 {
     background: #0A0A0A; /* Nero */
     color: #FFFFFF; /* Bianco */
+    height: 100vh; /* Imposta l'altezza della sezione a tutto schermo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }

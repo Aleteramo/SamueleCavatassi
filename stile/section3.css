@@ -1,5 +1,11 @@
 /* section3.css */
 #section3 {
     background: #27408B; /* Blu Scuro */
-    color: #FFFFFF;
+    color: #FFFFFF; /* Bianco */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }

@@ -4,229 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carhartt Saldi Streetwear</title>
-    <style>
-        body, html {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    height: 100%;
-    font-family: 'Arial', sans-serif;
-}
-
-.scroll-section {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    transition: transform 1s ease, opacity 1s ease;
-
-}
-.scroll-section.entering, .scroll-section.leaving {
-    transform: scale(1.05); /* Leggero aumento di scala */
-    opacity: 0.8; /* Leggera riduzione dell'opacità */
-    transition: transform 0.5s ease, opacity 0.5s ease;
-}
-button:hover {
-    background-color: #DAA520;
-    color: #FFFFFF;
-    transform: scale(1.1);
-}
-
-
-#section1 {
-    background: #0A0A0A; /* Nero */
-    color: #FFFFFF; /* Bianco */
-}
-
-#section2 {
-    background: #1A1A1A; /* Grigio Scuro */
-    color: #DAA520; /* Oro */
-}
-
-#section3 {
-    background: #27408B; /* Blu Scuro */
-    color: #FFFFFF;
-}
-
-#section4 {
-    background: #363636; /* Grigio Medio */
-    color: #DAA520;
-}
-
-#section5 {
-    background: #0A0A0A;
-    color: #DAA520;
-}
-
-.scroll-section img {
-    max-width: 80%;
-    max-height: 40vh;
-    margin: 20px 0;
-}   
-.interactive-text span {
-    transition: background-color 0.3s ease;
-}
-
-.interactive-text span:hover {
-    background-color: #DAA520; /* O il colore che preferisci */
-    color: #FFFFFF;
-}
-.interactive-text span {
-    transition: transform 0.3s ease, text-shadow 0.3s ease;
-    display: inline-block; /* Necessario per applicare la trasformazione */
-    cursor: pointer; /* Opzionale, indica che il testo è interattivo */
-}
-
-.interactive-text span:hover {
-    transform: translateY(-5px); /* Sposta leggermente in alto la lettera */
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4); /* Aggiunge ombra per effetto 3D */
-}
-.interactive-text span {
-    margin-right: -1px; /* Riduce lo spazio tra le lettere */
-    transition: transform 0.3s ease, text-shadow 0.3s ease;
-    display: inline-block;
-    /* Resto dello stile */
-}
-.interactive-text {
-    white-space: pre-wrap; /* Mantiene gli spazi e gli a capo nel testo */
-}
-.scroll-section span {
-    display: inline-block;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-}
-
-.scroll-section.leaving span {
-    transform: translate(10px, 20px) rotate(20deg);
-    opacity: 0;
-}
-
-
-
-
-    </style>
+    <link rel="stylesheet" href="stile.css"> <!-- Spostato il CSS in un file esterno -->
 </head>
 <body>
-    <div class="scroll-section" id="section1">
+    <header class="scroll-section" id="section1">
         <img src="Downloads/Logo.png" alt="Logo Carhartt">
-        <h1 class="interactive-text"> è Carhartt Saldi - Scopri la Collezione Streetwear</h1>
-    </div>
+        <h1>è Carhartt Saldi - Scopri la Collezione Streetwear</h1>
+    </header>
     
-    <div class="scroll-section" id="section2">
-        <h1 class="interactive-text">Eleva il Tuo Stile con Carhartt - Offerte Esclusive Ti Attendono!</h1>
-        <p class="interactive-text">Unisciti alla rivoluzione dello streetwear con sconti fino al 60%. Offerta Limitata!</p>
+    <section class="scroll-section" id="section2">
+        <h1>Eleva il Tuo Stile con Carhartt - Offerte Esclusive Ti Attendono!</h1>
+        <p>Unisciti alla rivoluzione dello streetwear con sconti fino al 60%. Offerta Limitata!</p>
         <button>Scopri di Più</button>
-    </div>
-   
+    </section>
     
-    <div class="scroll-section" id="section3">
-        <h2 class="interactive-text">Un Marchio, Una Storia. Scopri il Mondo di Carhartt.</h2>
-        <p class="interactive-text">Qualità Insuperabile. Stile Inconfondibile. Un'eredità di robustezza e affidabilità.</p>
-    </div>
+    <section class="scroll-section" id="section3">
+        <h2>Un Marchio, Una Storia. Scopri il Mondo di Carhartt.</h2>
+        <p>Qualità Insuperabile. Stile Inconfondibile. Un'eredità di robustezza e affidabilità.</p>
+    </section>
     
-    <div class="scroll-section" id="section4">
-        <h2 class="interactive-text">Cosa Dicono i Nostri Clienti</h2>
-        <p class="interactive-text">"La mia giacca Carhartt non è solo comoda ma anche incredibilmente stilosa. Ottimo acquisto!" - Alessia R.</p>
-    </div>
+    <section class="scroll-section" id="section4">
+        <h2>Cosa Dicono i Nostri Clienti</h2>
+        <p>"La mia giacca Carhartt non è solo comoda ma anche incredibilmente stilosa. Ottimo acquisto!" - Alessia R.</p>
+    </section>
     
-    <div class="scroll-section" id="section5">
-        <p class="interactive-text">Hai domande? Contattaci a info@carharttexample.com</p>
-    </div>
+    <footer class="scroll-section" id="section5">
+        <p>Hai domande? Contattaci a info@carharttexample.com</p>
+    </footer>
     
-    <script>
- let currentSectionIndex = 0;
-const sections = document.querySelectorAll('.scroll-section');
-let isScrolling = false;
-let accumulatedDeltaY = 0;
-const deltaYThreshold = 30;
-let scrollDirection = 1; // 1 per scroll verso il basso, -1 per scroll verso l'alto
-
-document.addEventListener('wheel', function(event) {
-    if (isScrolling) return;
-
-    accumulatedDeltaY += event.deltaY;
-    if (Math.abs(accumulatedDeltaY) < deltaYThreshold) return;
-    accumulatedDeltaY = 0;
-
-    isScrolling = true;
-    let leavingSection = sections[currentSectionIndex];
-
-    if (event.deltaY > 0 && currentSectionIndex < sections.length - 1) {
-        scrollDirection = 1;
-        currentSectionIndex++;
-    } else if (event.deltaY < 0 && currentSectionIndex > 0) {
-        scrollDirection = -1;
-        currentSectionIndex--;
-    }
-
-    animateLettersOut(leavingSection, scrollDirection);
-    let enteringSection = sections[currentSectionIndex];
-    scrollToSection(currentSectionIndex);
-
-    setTimeout(function() {
-        isScrolling = false;
-        animateLettersIn(enteringSection);
-    }, 700);
-});
-
-function animateLettersOut(section, direction) {
-    const textSpans = section.querySelectorAll('.interactive-text span');
-    textSpans.forEach(span => {
-        const randomX = (Math.random() - 0.5) * 100; // Valore casuale per X
-        const randomY = (Math.random() - 0.5) * 100; // Valore casuale per Y
-        span.style.opacity = 0.5;
-        span.style.transform = `translate(${randomX}px, ${randomY}px) scale(1.5)`;
-    });
-}
-
-function animateLettersIn(section) {
-    const textSpans = section.querySelectorAll('.interactive-text span');
-    let delay = 0;
-    textSpans.forEach(span => {
-        span.style.transition = `transform 0.5s ease ${delay}s, opacity 0.5s ease ${delay}s`;
-        span.style.transform = 'translate(0, 0) scale(1)';
-        span.style.opacity = 1;
-        delay += 0.05; // Aggiunge un leggero ritardo per ogni lettera
-    });
-}
-
-function scrollToSection(index) {
-    sections[index].scrollIntoView({ behavior: 'smooth' });
-}
-
-window.addEventListener('DOMContentLoaded', (event) => {
-    document.querySelectorAll('.interactive-text').forEach((textElement, index) => {
-        let newText = '';
-        for (let node of textElement.childNodes) {
-            if (node.nodeType === Node.TEXT_NODE) {
-                newText += node.textContent.split('').map(letter => `<span>${letter}</span>`).join('');
-            }
-        }
-        textElement.innerHTML = newText;
-
-        // Prepara l'animazione solo per le sezioni successive alla prima
-        if (index > 0) {
-            prepareAnimation(textElement.parentElement);
-        }
-    });
-});
-
-function prepareAnimation(section) {
-    const textSpans = section.querySelectorAll('.interactive-text span');
-    textSpans.forEach(span => {
-        // Imposta le lettere in una posizione fuori schermo
-        span.style.transform = `translate(0px, 0px) scale(1)`;
-        span.style.opacity = 0;
-    });
-}
-
-// ...resto del tuo script...
-
-
-
-
-    </script>
+    <script src="script.js"></script> <!-- Spostato il JS in un file esterno -->
 </body>
 </html>
+

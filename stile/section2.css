@@ -2,7 +2,14 @@
 #section2 {
     background: #1A1A1A; /* Grigio Scuro */
     color: #DAA520; /* Oro */
+    height: 100vh; /* Assicura che la sezione occupi l'intera finestra di visualizzazione */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
+
 
 #section2 button {
     background-color: #DAA520;
